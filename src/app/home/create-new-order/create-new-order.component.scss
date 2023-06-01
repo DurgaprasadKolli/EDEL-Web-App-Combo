@@ -1,0 +1,49 @@
+.home-content {
+  padding: 30px;
+}
+
+.cus-primary-btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #197ccb;
+}
+
+.track-order-alert {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  bottom: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #197ccb;
+}
+
+.track-order-alert div {
+  padding: 10px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.track-order-alert div span {
+  background-color: #FFFFFF;
+  color: black;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.track-order-alert div:first-child,
+.track-order-alert div:last-child {
+  width: 10%;
+}
+
+.track-order-alert div:nth-child(2), {
+  width: 80%
+}

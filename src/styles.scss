@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+$custom-typography: mat.define-typography-config(
+        $font-family: 'Exo',
+);
+
+@include mat.core($custom-typography);
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  app-root * {
+    font-family: 'Georama SemiExpanded', sans-serif;
+    //Georama SemiExpanded
+  }
+}
+
+
+.content {
+  //padding: 30px;
+}
+
+.cus-mat-full-width {
+  width: 100%;
+}
+
+.cus-mat-full-width input {
+  //letter-spacing: 0.5em;
+  font-weight: 600;
+}
+
+.sec1 {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sec2 {
+  padding: 30px;
+}
+
+.otp_sect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    width: 25%;
+    margin: 2%;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    //font-size: 1.4rem;
+    //border: transparent;\
+    border: 1px solid rgba(0,0,0,.12);
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.cus-h1 {
+  font-weight: bold !important;
+  font-size: 41px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-prefix {
+  top: 0 !important;
+}

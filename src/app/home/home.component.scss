@@ -1,0 +1,66 @@
+.home-layout {
+  height: 100vh;
+  margin: 30px;
+}
+
+.home-title {
+  display: grid;
+  align-items: end;
+  padding-top: 42px;
+}
+
+.scroll-cus {
+  display: flex;
+  overflow-x: auto;
+  font-size: 18px;
+}
+
+.scroll-cus div {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 34%;
+  margin-right: 10px;
+  padding: 20px;
+  height: 200px;
+  background-color: #E4E4E4;
+  color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.scroll-cus.scroll-cus-1 div:nth-child(1) {
+  flex: 0 0 8%;
+}
+
+.scroll-cus.scroll-cus-1 div:nth-child(1), .scroll-cus.scroll-cus-1 div:nth-child(2) {
+  background-color: #006BC2;
+}
+
+.scroll-cus::-webkit-scrollbar {
+  display: none;
+}
+
+.track-order-alert {
+  padding: 10px;
+  text-align: center;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.track-order-alert .notification-count {
+  background-color: #FFFFFF;
+  color: black;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.track-order-alert .notification-title span {
+  //position: absolute;
+  white-space: nowrap;
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+

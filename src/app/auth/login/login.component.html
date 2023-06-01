@@ -1,0 +1,48 @@
+<!--<div class="container">-->
+<div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutAlign="space-around center">
+  <div fxFlex="60" class="sec1" fxFlex.xs="60" fxFlexAlign="auto">
+    <!--        IMAGE-->
+    <img src="https://png.pngtree.com/png-clipart/20201104/ourmid/pngtree-cartoon-truck-delivery-elements-png-image_2383380.jpg" style="max-width: 100%">
+  </div>
+  <div fxFlex="40" class="sec2" fxFlexAlign="auto">
+    <form class="login-form" [formGroup]="loginForm">
+      <!-- Phone number -->
+      <div *ngIf="!isOTP">
+        <h1>Welcome</h1>
+        <p>With a valid number, you can access delivery, other services</p>
+<!--        <mat-form-field floatLabel="always" class="cus-mat-full-width" appearance="outline">-->
+<!--          <input matInput placeholder="Enter mobile number" [errorStateMatcher]="matcher" formControlName="phoneNumber" [(ngModel)]="phoneNumber" onlyNumber maxlength="10" (ngModelChange)="sendOtp()" [ngStyle]="{'letter-spacing': letterSpacing ? '0.5rem' : ''}">-->
+<!--          <span matTextPrefix>+91&nbsp;</span>-->
+<!--          <mat-error *ngIf="loginForm.get('phoneNumber')?.hasError('required')">-->
+<!--            Mobile number is <strong>required</strong>-->
+<!--          </mat-error>-->
+<!--          <mat-error *ngIf="!loginForm.get('phoneNumber')?.hasError('required') && loginForm.get('phoneNumber')?.hasError('pattern')">-->
+<!--            Please enter valid number-->
+<!--          </mat-error>-->
+<!--        </mat-form-field>-->
+        <mat-form-field class="cus-mat-full-width" appearance="outline" floatLabel="always">
+<!--          <input matInput type="text" placeholder="0" />-->
+          <input matInput placeholder="Enter mobile number" [errorStateMatcher]="matcher" formControlName="phoneNumber" [(ngModel)]="phoneNumber" onlyNumber maxlength="10" (ngModelChange)="sendOtp()" [ngStyle]="{'letter-spacing': letterSpacing ? '0.5rem' : ''}">
+          <span *ngIf="letterSpacing" matPrefix style="border-right: 1px solid rgba(0,0,0,.12); margin: 0 10px 0 0; padding: 0 4px 0 0;font-weight: 600">+91&nbsp;</span>
+          <mat-error *ngIf="loginForm.get('phoneNumber')?.hasError('required')">
+            Mobile number is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="!loginForm.get('phoneNumber')?.hasError('required') && loginForm.get('phoneNumber')?.hasError('pattern')">
+            Please enter valid number
+          </mat-error>
+        </mat-form-field>
+        <span *ngIf="error" style="color: #f44336;">{{error}}</span>
+      </div>
+      <div  *ngIf="isOTP">
+        <h1>Enter OTP</h1>
+        <p>Enter the one time password, received <br> on +91 {{loginForm.get('phoneNumber')?.value}}        <i (click)="backToPhoneNumber()"><b>[edit]</b></i></p>
+        <div class="otp_sect">
+          <input type="text" maxlength="1" formControlName="firstOtp" onlyNumber #firstText (keyup)="move($event, '', firstText, secondText)" />
+          <input type="text" maxlength="1" formControlName="secondOtp" onlyNumber #secondText (keyup)="move($event, firstText, secondText, thirdText)" />
+          <input type="text" maxlength="1" formControlName="thirdOtp" onlyNumber #thirdText (keyup)="move($event, secondText, thirdText, fourthText)" />
+          <input type="text" maxlength="1" formControlName="fourthOtp" onlyNumber #fourthText (keyup)="move($event, thirdText, fourthText, '')" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
